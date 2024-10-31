@@ -1,115 +1,58 @@
-import Image from "next/image";
-import localFont from "next/font/local";
+import { useEffect, useState } from 'react';
+import moment from 'moment';
+import styles from '../styles/Home.module.css';
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const Home: React.FC = () => {
+  const [countdown, setCountdown] = useState<string>('');
 
-export default function Home() {
+  useEffect(() => {
+    const weddingDate = moment("2025-07-19");
+    const updateCountdown = () => {
+      const now = moment();
+      const duration = moment.duration(weddingDate.diff(now));
+      setCountdown(`${duration.days()}d ${duration.hours()}h ${duration.minutes()}m ${duration.seconds()}s`);
+    };
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/pages/index.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className={styles.container}>
+      <section id="countdown" className={styles.section}>
+        <h1>Benvenuti al Nostro Matrimonio</h1>
+        <p>Countdown al giorno speciale: {countdown}</p>
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      <section id="story" className={styles.section}>
+        <h2>Come ci siamo incontrati</h2>
+        <p>Marni dice che... Andre dice che...</p>
+      </section>
+
+      <section id="details" className={styles.section}>
+        <h2>Dettagli del Matrimonio</h2>
+        <p><strong>Cerimonia:</strong> Chiesa di S. Eufemia alle ore 15:00</p>
+        <p><strong>Festa:</strong> Cascine Ghisolfa alle ore 17:00</p>
+        <h3>Parcheggi:</h3>
+        <ul>
+          <li>Plazza Mercato (davanti a farmacia) - a pagamento</li>
+          <li>Via Filippo Turati 5 - Disco Orario</li>
+          <li>Via Carroccio 8 - Gratis, No Disco</li>
+        </ul>
+      </section>
+
+      <section id="rsvp" className={styles.section}>
+        <h2>Conferma la tua presenza</h2>
+        <button className={styles.button}>Conferma qui</button>
+      </section>
+
+      <section id="honeymoon" className={styles.section}>
+        <h2>Viaggio di Nozze</h2>
+        <p>Se vuoi contribuire al nostro viaggio, clicca qui!</p>
+        <button className={styles.button}>Contribuisci</button>
+      </section>
     </div>
   );
 }
+
+export default Home;

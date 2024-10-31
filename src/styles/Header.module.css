@@ -1,0 +1,18 @@
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f76c6c;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
