@@ -4,6 +4,7 @@ import moment from "moment/moment";
 import Image from "next/image";
 import BackgroundImage from "@/assets/background.png"
 import BackgroundMobileImage from "@/assets/background-mobile.png"
+import ScrollDown from "@/components/ui/ScrollDown";
 
 
 export default function Hero () {
@@ -53,6 +54,8 @@ export default function Hero () {
               <h3 className="text">Siamo felici di annunciare il nostro matrimonio</h3>
               <h2>{countdown}</h2>
             </Box>
+
+        <ScrollDown />
         </Box>
     );
 }
