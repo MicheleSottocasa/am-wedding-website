@@ -22,8 +22,8 @@ export default function Hero () {
   }, []);
 
     return (
-        <Box className="flex items-center w-full h-screen">
-            <Box className="hidden md:flex items-center justify-center h-screen w-full">
+        <Box className="flex items-center w-full h-screen md:h-[90vh]">
+            <Box className="hidden md:flex items-center justify-center h-screen md:h-[90vh] w-full">
                 <Image
                     src={BackgroundImage}
                     className="-z-10"
@@ -32,7 +32,7 @@ export default function Hero () {
                     objectPosition="center"
                 />
             </Box>
-            <Box className="flex md:hidden items-center justify-center h-screen w-full">
+            <Box className="flex md:hidden items-center justify-center h-screen md:h-[90vh] w-full">
                 <Image
                     src={BackgroundMobileImage}
                     className="-z-10"
@@ -41,11 +41,17 @@ export default function Hero () {
                     objectPosition="center"
                 />
             </Box>
-            <Box className="absolute top-0 left-0 w-full h-screen flex flex-col md:gap-10 xl:gap-36 items-center justify-center font-eyesome z-10 text-white bg-black/40 p-6 text-center"
+            <Box
+                className="absolute top-0 left-0 w-full h-screen md:h-[90vh] flex flex-col md:gap-10 xl:gap-36 items-center justify-center font-eyesome z-10 text-white p-6 text-center"
+                sx={{
+                  // Gradient only applies for `md` screens and larger
+                  background: "linear-gradient(to bottom,rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0) 100%)",
+                  textShadow: "0px 2px 4px rgba(0, 0, 0, 0.6)", // Text shadow for better visibility
+                }}
             >
-                <h1>Andrea & Martina</h1>
-                <h3 className="text">Siamo felici di annunciare il nostro matrimonio</h3>
-                <h2>{countdown}</h2>
+              <h1>Andrea & Martina</h1>
+              <h3 className="text">Siamo felici di annunciare il nostro matrimonio</h3>
+              <h2>{countdown}</h2>
             </Box>
         </Box>
     );
