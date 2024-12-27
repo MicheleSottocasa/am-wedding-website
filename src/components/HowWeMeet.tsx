@@ -2,7 +2,7 @@ import {Box} from "@mui/material";
 
 export default function HowWeMeet() {
     return(
-        <Box className={"flex flex-col items-center justify-center w-full p-6"}>
+        <Box className={"flex flex-col items-center justify-center w-full p-6 md:mt-[10vh]"}>
             <h1 className="font-eyesome text-center">Come ci siamo conosciuti</h1>
 
             <Box className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-56 md:px-10 mt-6 w-full">

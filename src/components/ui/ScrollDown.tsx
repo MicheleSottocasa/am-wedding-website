@@ -16,7 +16,7 @@ export default function ScrollDown() {
       }}
     >
       {/* Arrows */}
-      <Box sx={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: "8px", marginTop: { md:"-10vh"}, }}>
         {[0, 200, 400].map((delay) => (
           <Box
             key={delay}
