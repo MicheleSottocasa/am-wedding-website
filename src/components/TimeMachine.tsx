@@ -9,7 +9,7 @@ export default function TimeMachine(){
                 <Image src={timeMachineImage} alt="time machine image" className="hidden md:block"/>
                 <Box className="flex flex-col items-center justify-center gap-6 md:gap-10 text-2xl md:text-4xl font-extralight  text-center">
                     <Box className="flex flex-col items-center justify-center gap-4 md:gap-8">
-                        <p>Dal primo si</p>
+                        <p>Dal primo sì</p>
                         <p className="font-eyesome text-4xl font-semibold">11 Luglio 2015</p>
                     </Box>
                     <p>Alla tanto desiderata domanda</p>
