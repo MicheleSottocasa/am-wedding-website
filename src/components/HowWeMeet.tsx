@@ -20,7 +20,7 @@ export default function HowWeMeet() {
                             objectPosition="center"
                         />
                     </div>
-                    <p className="md:text-xl">Un giorno, nel lontano 2015, causalmente Andrea compare tra le persone che
+                    <p className="text-xl">Un giorno, nel lontano 2015, causalmente Andrea compare tra le persone che
                         potresti conoscere su Facebook.
                         Decido quindi di inoltrargli la richiesta di amicizia e da lì qualche giorno dopo inizia a
                         scrivermi e iniziamo a conoscerci…
@@ -37,7 +37,7 @@ export default function HowWeMeet() {
                             objectPosition="center"
                         />
                     </div>
-                    <p className="md:text-xl">Una sera la vedo in un locale perché sono andato a salutare un amico che
+                    <p className="text-xl">Una sera la vedo in un locale perché sono andato a salutare un amico che
                         era nella compagnia con cui era uscita lei,
                         la vedo, mi colpisce, e il giorno dopo vedo la sua richiesta di amicizia su Facebook, quindi con
                         la scusa che lei mi aveva chiesto l’amicizia io ho
@@ -45,7 +45,7 @@ export default function HowWeMeet() {
                     </p>
                 </Box>
             </Box>
-            <p className="md:text-xl text-center mt-10">Da quel momento in poi non abbiamo più smesso di sentirci e
+            <p className="text-xl text-center mt-10">Da quel momento in poi non abbiamo più smesso di sentirci e
                 vederci!</p>
         </Box>
     )
