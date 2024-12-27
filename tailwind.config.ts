@@ -19,6 +19,7 @@ const config: Config = {
       },
       fontFamily: {
         eyesome: ['Eyesome', 'sans-serif'],
+        sheftira: ['Sheftira', 'serif'],
       },
       keyframes: {
         fadeInUp: {

@@ -7,6 +7,12 @@
   src: url('fonts/EyesomeScript.otf') format('opentype');
   font-weight: normal;
 }
+@font-face {
+  font-family: 'Sheftira';
+  src: url('fonts/Sheftira.otf') format('opentype');
+  font-weight: normal;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -15,7 +21,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Sheftira, sans-serif;
 }
 
 h1 {
