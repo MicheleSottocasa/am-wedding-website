@@ -11,14 +11,14 @@ export default function Hero () {
     const [countdown, setCountdown] = useState<string>('');
 
     useEffect(() => {
-    const weddingDate = moment("2025-07-11");
+    const weddingDate = moment("2025-07-11 01:01:00");
     const updateCountdown = () => {
       const now = moment();
       const duration = moment.duration(weddingDate.diff(now));
-      setCountdown(`${duration.months()}m ${duration.days()}d ${duration.hours()}h ${duration.minutes()}m ${duration.seconds()}s`);
+      setCountdown(`${duration.months()}m ${duration.days()}d ${duration.hours()}h ${duration.minutes()}m`);
     };
     updateCountdown();
-    const interval = setInterval(updateCountdown, 1000);
+    const interval = setInterval(updateCountdown, 10000);
     return () => clearInterval(interval);
   }, []);
 
