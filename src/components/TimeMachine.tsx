@@ -1,4 +1,4 @@
-import timeMachineImage from "@/assets/time-machine.JPG";
+import timeMachineImage from "@/assets/time-machine.jpg";
 import {Box} from "@mui/material";
 import Image from "next/image";
 
