@@ -1,7 +1,7 @@
 import {Box} from "@mui/material";
 import Image from "next/image";
-import MartiImage from "@/assets/Marti.jpeg";
-import AndreImage from "@/assets/Andre.jpeg";
+import MartiImage from "@/assets/Marti.jpg";
+import AndreImage from "@/assets/Andre.jpg";
 
 export default function HowWeMeet() {
     return(
