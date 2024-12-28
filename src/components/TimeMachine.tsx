@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function TimeMachine(){
     return(
-        <Box>
+        <Box className="h-screen flex flex-col justify-center">
             <Box className="flex flex-col md:flex-row items-center justify-center m-5 gap-24">
                 <Image src={timeMachineImage} alt="time machine image" className="hidden md:block"/>
                 <Box className="flex flex-col items-center justify-center gap-6 md:gap-10 text-2xl md:text-4xl font-extralight  text-center">

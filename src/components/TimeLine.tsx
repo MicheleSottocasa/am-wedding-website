@@ -15,7 +15,7 @@ import {
 
 export default function TimeLine () {
     return(
-        <Box className="max-w-2xl flex justify-center items-center mx-auto my-28">
+        <Box className="max-w-2xl flex justify-center items-center mx-auto my-28 h-[80vh]">
           <Timeline position="alternate-reverse">
 
             <TimelineItem>
