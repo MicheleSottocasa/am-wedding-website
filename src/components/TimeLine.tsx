@@ -79,7 +79,7 @@ export default function TimeLine () {
               <TimelineContent className="flex items-center justify-end">
                   <p className="font-sheftira">
                     TORTA <br />
-                    ora 22:00
+                    ore 22:00
                   </p>
               </TimelineContent>
             </TimelineItem>
