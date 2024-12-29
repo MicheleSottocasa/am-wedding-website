@@ -15,6 +15,10 @@ export default function Home() {
           <TimeLine />
           <ConfirmInvite />
           <WeddingTrip />
+          <Box className="flex flex-col text-center mb-44">
+              <h3>La felicità è la sola cosa che si raddoppia quando la si condivide. <br />
+                  Grazie per la vostra presenza.</h3>
+          </Box>
       </Box>
   );
 }
