@@ -1,22 +1,41 @@
 import { Box } from "@mui/material";
 
-export default function ScrollDown() {
+interface ScrollDownProps {
+  position?: "absolute" | "fixed" | "relative"; // Allows positioning customization
+  bottom?: string; // Distance from the bottom
+  left?: string; // Horizontal alignment
+  zIndex?: number; // Layer priority
+}
+
+export default function ScrollDown({
+  position = "absolute",
+  bottom = "20px",
+  left = "50%",
+  zIndex = 20,
+}: ScrollDownProps) {
   return (
     <Box
       sx={{
-        position: "absolute",
-        bottom: "20px",
-        left: "50%",
+        position,
+        bottom,
+        left,
         transform: "translateX(-50%)",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         cursor: "pointer",
-        zIndex: 20,
+        zIndex,
       }}
     >
       {/* Arrows */}
-      <Box sx={{ display: "flex", flexDirection: "column", gap: "8px", marginTop: { md:"-10vh"}, }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "8px",
+          marginTop: { md: "-10vh" },
+        }}
+      >
         {[0, 200, 400].map((delay) => (
           <Box
             key={delay}
